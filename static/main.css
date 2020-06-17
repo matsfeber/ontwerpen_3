@@ -1,10 +1,26 @@
+#map {
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 20px;
+  display: none;
+  animation: appear 1s ease-in;
+}
+
+.article {
+width: 32.5%;
+right: 0;
+margin-top: 15%;
+margin-right: 12.5%;
+position: absolute;
+}
+
 body {
   background-color: #1a1a1a;
   z-index: -5;
 }
 
 footer {
-  background: rgb(250,250,250,.8);
+  background: rgb(250,250,250,1);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -18,12 +34,30 @@ ul {
   padding: 0;
   display: none;
   margin-top: 5px;
+
 }
 
 li {
   font-family: akrobat;
+  font-weight: 800;
   margin: 0;
   margin-bottom: 5px;
+}
+
+li:nth-child(1) {
+  color: #5ed33d;
+}
+
+li:nth-child(2) {
+  color: #B19BD9;
+}
+
+li:nth-child(3) {
+  color: #00E178;
+}
+
+li:nth-child(4) {
+  color: #d4223e;
 }
 
 h1 {
@@ -45,10 +79,10 @@ h1 span:hover {
 }
 
 h2 {
-  color: red;
   font-family: akrobat;
   margin: 0;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 h2:hover {
@@ -127,6 +161,18 @@ nav button:hover {
   margin-left: 37.5%;
   margin-top: 15px;
 }
+.title h3 {
+  text-align: center;
+  animation: flash 5s infinite;
+}
+
+.title h3:hover {
+  text-align: center;
+}
+
+#naam {
+margin-bottom: 20px;
+}
 
 .title svg {
   width: 80%;
@@ -150,14 +196,14 @@ svg:hover > #bovensprieten {
 .info {
   display: none;
   position: absolute;
+  margin-left: 37.5%;
+  margin-top: 15%;
 }
 
 .zichtbaar {
   display: block;
   transition: 1s;
 }
-
-
 
 .groen {
   color: #5ed33d;
@@ -201,6 +247,26 @@ svg:hover > #bovensprieten {
   opacity: 0.4;
 }
 
+.controls {
+  border-radius: 0;
+  border: none;
+  color: white;
+  background-color: black;
+  height: 50px;
+  width: 35px;
+  text-align: center;
+  margin-top: 20%;
+  opacity: 0.7;
+  transition: .5s;
+  display: none;
+  z-index: 20
+}
+
+.controls:hover{
+  opacity: 1;
+  width: 50px
+}
+
 #main {
   transition: 1s;
 }
@@ -210,42 +276,23 @@ svg:hover > #bovensprieten {
   transition: 2s;
 }
 
-#bron {
-  margin-left: 37.5%;
-  margin-top: 15%;
-  animation: move-into-frame 2s ease-out;
-  animation-iteration-count: 1;
-}
 
-#doden {
-  margin-left: 37.5%;
-  margin-top: 20%;
-  animation: move-into-frame 2s ease-out;
-  animation-iteration-count: 1;
-}
 
-#locatie {
-  margin-left: 37.5%;
-  margin-top: 25%;
+#doden , #bron, #lesson{
   animation: move-into-frame-2 2s ease-out;
   animation-iteration-count: 1;
 }
 
-#periode {
-  margin-left: 37.5%;
-  margin-top: 30%;
-  animation: move-into-frame-2 2s ease-out;
+#locatie , #periode {
+  animation: move-into-frame 2s ease-out;
   animation-iteration-count: 1;
 }
+
+
 
 #tekst {
-  position: absolute;
   color: white;
   font-family: raleway;
-  width: 30%;
-  right: 0;
-  margin-top: 15%;
-  margin-right: 15%;
   text-align: left;
   font-size: 1em;
   animation: move-into-frame-3 2s ease-out;
@@ -260,7 +307,7 @@ svg:hover > #bovensprieten {
   border: none;
   border-radius: 10px 10px 0 0;
 
-  background: rgb(250,250,250,.8);
+  background: rgb(250,250,250,1);
   padding-left: 10px;
   padding-right: 10px;
   transition: .5s;
@@ -285,10 +332,49 @@ svg:hover > #bovensprieten {
   transition: 2s;
 }
 
+#next {
+  position: absolute;
+  right: 0;
+  display: none;
+}
+
+#previous {
+position: absolute;
+left: 0;
+display: none;
+
+}
 
 #footer {
   text-align: center;
   transition: 2s;
+}
+
+#periodeTekst {
+  color: #769DCA
+}
+
+#dodenTekst {
+  color: #d4223e
+}
+
+#locatieTekst {
+  color: #B19BD9
+}
+
+#bronTekst {
+  color: #00E178;
+}
+
+#lesson {
+  text-decoration: underline black;
+  color: #f6f5b1;
+  margin-top: 20px;
+}
+#lesson:hover {
+  transform: scale(1.1);
+  text-decoration: underline #f6f5b1;
+  cursor: pointer;
 }
 
 .tekst {
@@ -376,5 +462,40 @@ svg:hover > #bovensprieten {
 
   100% {
   transform: translateX(0px) translateY(0px);
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+
+  25% {
+  opacity: 0;
+
+  }
+
+  50% {
+  opacity: 1;
+  }
+
+  75% {
+  opacity: 0;
+
+  }
+
+  100% {
+  opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0%{
+  opacity: 0;
+  }
+
+
+  100% {
+  opacity: 1;
   }
 }
